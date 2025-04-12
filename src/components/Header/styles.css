@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: aqua;
+}
+
+.header-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.nav-links{
+  display: flex;
+  gap: 30px;
+}
+
