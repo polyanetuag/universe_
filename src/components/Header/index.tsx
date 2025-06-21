@@ -1,11 +1,11 @@
-import './styles.css'
+import "./styles.css";
 
 function Header() {
   return (
-    <header className='header-container'>
+    <header className="header-container">
       <div>
-        <h1>Logo</h1>
-        <p>Universo</p>
+        {/* <h2>Logo</h2> */}
+        <p>Universe</p>
       </div>
       {/* <img src="" alt="Logo" />
       <h2>Universe</h2> */}
@@ -19,8 +19,6 @@ function Header() {
         <input type="text" placeholder="Pesquisar..." />
         <button type="submit">Buscar</button>
       </div>
-     
-
     </header>
   );
 }
