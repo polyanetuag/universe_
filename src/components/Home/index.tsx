@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
 
+type DataResponse = {
+  date: string;
+  explanation: string;
+  title: string;
+  url: string;
+};
+
 async function obterDados() {
   const dadosRespose = await fetch(
     "https://api.nasa.gov/planetary/apod?api_key=6k6cosvzmKWWeRiKLgHWU7cXSCcgZ5e6Qc2nZf9c"
@@ -10,13 +17,6 @@ async function obterDados() {
 
   return dadosJson;
 }
-
-type DataResponse = {
-  date: string;
-  explanation: string;
-  title: string;
-  url: string;
-};
 
 function Home() {
   const [dadosExibir, setDadosExibir] = useState<DataResponse>();
@@ -31,9 +31,9 @@ function Home() {
 
   return (
     <>
-      <div className="grid p-6 gap-6 grid-cols-2 ">
-        <div className="col-span-2">
-          <h2 className="text-2xl text-gray-300 flex justify-center mb-6">
+      <div className="grid p-10 gap-2 grid-cols-2 ">
+        <div className="col-span-2 flex justify-center mb-6">
+          <h2 className="text-2xl text-yellow-300 flex justify-center mb-6">
             {dadosExibir?.title}
           </h2>
         </div>
