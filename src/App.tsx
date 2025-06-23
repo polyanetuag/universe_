@@ -4,7 +4,7 @@ import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="mx-auto max-w-4xl p-5">
+    <div className="mx-auto max-w-5xl p-5">
       <Header />
       <Home />
     </div>
