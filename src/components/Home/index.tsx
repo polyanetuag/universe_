@@ -31,9 +31,9 @@ function Home() {
 
   return (
     <>
-      <div className="grid p-10 gap-2 grid-cols-2 ">
+      <div className="grid p-10 gap-2 grid-cols-2 shadow-black shadow-lg rounded-lg ">
         <div className="col-span-2 flex justify-center mb-6">
-          <h2 className="text-2xl text-yellow-300 flex justify-center mb-6">
+          <h2 className="text-2xl text-white flex justify-center mb-6">
             {dadosExibir?.title}
           </h2>
         </div>
@@ -48,6 +48,9 @@ function Home() {
           />
         </div>
       </div>
+      <footer className="flex justify-center items-center text-gray-600 p-2 mt-10">
+        <p>Fonte: NASA API | Desenvolvido por Polyane Tuag</p>
+      </footer>
     </>
   );
 }
