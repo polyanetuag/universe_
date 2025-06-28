@@ -35,13 +35,13 @@ function Home() {
     buscarDados();
   }, []);
 
-  // function getPreviousDate(dateString: string): string {
-  //   const date = new Date(dateString);
-  //   console.log("date", date);
-  //   date.setDate(date.getDate() - 1);
-  //   console.log("previousDate", date.toISOString().split("T")[0]);
-  //   return date.toISOString().split("T")[0];
-  // }
+  function getPreviousDate(dateString: string): string {
+    const date = new Date(dateString);
+    console.log("date", date);
+    date.setDate(date.getDate() - 1);
+    console.log("previousDate", date.toISOString().split("T")[0]);
+    return date.toISOString().split("T")[0];
+  }
 
   return (
     <>
@@ -53,14 +53,14 @@ function Home() {
         <div className="flex flex-row items-center justify-center">
           <div>
             <button
-              // onClick={() => {
-              //   const previousDate = getPreviousDate(dadosExibir?.date || "");
-              //   fetch(
-              //     `https://api.nasa.gov/planetary/apod?api_key=6k6cosvzmKWWeRiKLgHWU7cXSCcgZ5e6Qc2nZf9c&date=${previousDate}`
-              //   )
-              //     .then((response) => response.json())
-              //     .then((data) => setDadosExibir(data));
-              // }}
+              onClick={() => {
+                const previousDate = getPreviousDate(dadosExibir?.date || "");
+                fetch(
+                  `https://api.nasa.gov/planetary/apod?api_key=6k6cosvzmKWWeRiKLgHWU7cXSCcgZ5e6Qc2nZf9c&date=${previousDate}`
+                )
+                  .then((response) => response.json())
+                  .then((data) => setDadosExibir(data));
+              }}
               className="w-26 flex shadow-black text-gray-400 px-4 py-4 mr-4 rounded-lg shadow-md hover:bg-gray-800 text-sm cursor-pointer transition duration-300 ease-in-out"
             >
               ⪡ Previous
