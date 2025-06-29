@@ -12,6 +12,7 @@ function Home() {
   const [dadosExibir, setDadosExibir] = useState<DataResponse>();
   const [loading, setLoading] = useState(false);
 
+  // Função para obter os dados da API da NASA
   async function obterDados() {
     const dadosRespose = await fetch(
       "https://api.nasa.gov/planetary/apod?api_key=6k6cosvzmKWWeRiKLgHWU7cXSCcgZ5e6Qc2nZf9c"
@@ -22,6 +23,7 @@ function Home() {
     return dadosJson;
   }
 
+  // Função para buscar os dados e atualizar o estado
   async function buscarDados() {
     const dados = await obterDados();
     // setLoading(true);
@@ -35,11 +37,25 @@ function Home() {
     buscarDados();
   }, []);
 
+  // Função para obter a data anterior
   function getPreviousDate(dateString: string): string {
     const date = new Date(dateString);
     console.log("date", date);
     date.setDate(date.getDate() - 1);
     console.log("previousDate", date.toISOString().split("T")[0]);
+    return date.toISOString().split("T")[0];
+  }
+
+  // Função para obter a data seguinte
+  function getNextDate(dateString: string): string {
+    const date = new Date(dateString);
+    date.setDate(date.getDate() + 1);
+
+    // Verifica se a data seguinte é maior que a data atual
+    if (date > new Date()) {
+      return dateString;
+    }
+
     return date.toISOString().split("T")[0];
   }
 
@@ -53,6 +69,7 @@ function Home() {
         <div className="flex flex-row items-center justify-center">
           <div>
             <button
+              className="w-26 flex shadow-black text-gray-400 px-4 py-4 mr-4 rounded-lg shadow-md hover:bg-gray-800 text-sm cursor-pointer transition duration-300 ease-in-out"
               onClick={() => {
                 const previousDate = getPreviousDate(dadosExibir?.date || "");
                 fetch(
@@ -61,7 +78,6 @@ function Home() {
                   .then((response) => response.json())
                   .then((data) => setDadosExibir(data));
               }}
-              className="w-26 flex shadow-black text-gray-400 px-4 py-4 mr-4 rounded-lg shadow-md hover:bg-gray-800 text-sm cursor-pointer transition duration-300 ease-in-out"
             >
               ⪡ Previous
             </button>
@@ -86,17 +102,16 @@ function Home() {
 
           <div>
             <button
+              className="min-w-22 flex shadow-black text-gray-400 px-4 py-4 ml-4 rounded-lg shadow-md hover:bg-gray-800 text-sm "
               onClick={() => {
-                const nextDate = new Date(dadosExibir?.date || "");
-                nextDate.setDate(nextDate.getDate() + 1);
-                const formattedNextDate = nextDate.toISOString().split("T")[0];
+                const nextDate = getNextDate(dadosExibir?.date || "");
+
                 fetch(
-                  `https://api.nasa.gov/planetary/apod?api_key=6k6cosvzmKWWeRiKLgHWU7cXSCcgZ5e6Qc2nZf9c&date=${formattedNextDate}`
+                  `https://api.nasa.gov/planetary/apod?api_key=6k6cosvzmKWWeRiKLgHWU7cXSCcgZ5e6Qc2nZf9c&date=${nextDate}`
                 )
                   .then((response) => response.json())
                   .then((data) => setDadosExibir(data));
               }}
-              className="min-w-22 flex shadow-black text-gray-400 px-4 py-2 ml-4 rounded-lg shadow-md hover:bg-gray-800 text-sm cursor-pointer"
             >
               Next ⪢
             </button>
