@@ -10,7 +10,7 @@ type DataResponse = {
 
 function Home() {
   const [dadosExibir, setDadosExibir] = useState<DataResponse>();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // Função para obter os dados da API da NASA
   async function obterDados() {
@@ -25,12 +25,15 @@ function Home() {
 
   // Função para buscar os dados e atualizar o estado
   async function buscarDados() {
-    const dados = await obterDados();
-    // setLoading(true);
-
-    setDadosExibir(dados);
-
-    console.log("dados", dados);
+    setLoading(true);
+    try {
+      const dados = await obterDados();
+      setDadosExibir(dados);
+    } catch (error) {
+      console.error("Error fetching data", error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
