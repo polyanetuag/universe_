@@ -62,6 +62,25 @@ function Home() {
     return date.toISOString().split("T")[0];
   }
 
+  const handlePreviousDate = async () => {
+    const previousDate = getPreviousDate(dadosExibir?.date || "");
+    fetch(
+      `https://api.nasa.gov/planetary/apod?api_key=6k6cosvzmKWWeRiKLgHWU7cXSCcgZ5e6Qc2nZf9c&date=${previousDate}`
+    )
+      .then((response) => response.json())
+      .then((data) => setDadosExibir(data));
+  };
+
+  const handleNextDate = async () => {
+    const nextDate = getNextDate(dadosExibir?.date || "");
+
+    fetch(
+      `https://api.nasa.gov/planetary/apod?api_key=6k6cosvzmKWWeRiKLgHWU7cXSCcgZ5e6Qc2nZf9c&date=${nextDate}`
+    )
+      .then((response) => response.json())
+      .then((data) => setDadosExibir(data));
+  };
+
   return (
     <>
       {loading ? (
@@ -73,14 +92,7 @@ function Home() {
           <div>
             <button
               className="w-26 flex shadow-black text-gray-400 px-4 py-4 mr-4 rounded-lg shadow-md hover:bg-gray-800 text-sm cursor-pointer transition duration-300 ease-in-out"
-              onClick={() => {
-                const previousDate = getPreviousDate(dadosExibir?.date || "");
-                fetch(
-                  `https://api.nasa.gov/planetary/apod?api_key=6k6cosvzmKWWeRiKLgHWU7cXSCcgZ5e6Qc2nZf9c&date=${previousDate}`
-                )
-                  .then((response) => response.json())
-                  .then((data) => setDadosExibir(data));
-              }}
+              onClick={handlePreviousDate}
             >
               ⪡ Previous
             </button>
@@ -106,15 +118,7 @@ function Home() {
           <div>
             <button
               className="min-w-22 flex shadow-black text-gray-400 px-4 py-4 ml-4 rounded-lg shadow-md hover:bg-gray-800 text-sm "
-              onClick={() => {
-                const nextDate = getNextDate(dadosExibir?.date || "");
-
-                fetch(
-                  `https://api.nasa.gov/planetary/apod?api_key=6k6cosvzmKWWeRiKLgHWU7cXSCcgZ5e6Qc2nZf9c&date=${nextDate}`
-                )
-                  .then((response) => response.json())
-                  .then((data) => setDadosExibir(data));
-              }}
+              onClick={handleNextDate}
             >
               Next ⪢
             </button>
