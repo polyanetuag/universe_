@@ -118,7 +118,7 @@ function Home() {
 
           <div>
             <button
-              className="min-w-22 flex shadow-black text-gray-400 px-4 py-4 ml-4 rounded-lg shadow-md hover:bg-gray-800 text-sm "
+              className="min-w-22 flex shadow-black text-gray-400 px-4 py-4 ml-4 rounded-lg shadow-md hover:bg-gray-800 text-sm cursor-pointer"
               onClick={handleNextDate}
             >
               Next ⪢
