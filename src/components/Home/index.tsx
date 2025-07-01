@@ -56,6 +56,7 @@ function Home() {
 
     // Verifica se a data seguinte é maior que a data atual
     if (date > new Date()) {
+      alert("Não é possível ver a data futura!");
       return dateString;
     }
 
