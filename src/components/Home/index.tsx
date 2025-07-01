@@ -38,6 +38,7 @@ function Home() {
 
   useEffect(() => {
     buscarDados();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Função para obter a data anterior
