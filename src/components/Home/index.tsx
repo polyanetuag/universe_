@@ -111,7 +111,7 @@ function Home() {
               <img
                 className="w-full h-full object-cover rounded-lg shadow-lg"
                 src={dadosExibir?.url}
-                alt=""
+                alt="Imagem do dia"
               />
             </div>
           </div>
