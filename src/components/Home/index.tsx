@@ -129,7 +129,7 @@ function Home() {
       )}
 
       <footer className="flex justify-center items-center text-gray-600 p-2 mt-10">
-        <p>Fonte: NASA API | Desenvolvido por Polyane Tuag</p>
+        <p>Fonte: NASA API | Developed by Polyane Tuag</p>
       </footer>
     </>
   );
