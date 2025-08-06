@@ -1,5 +1,5 @@
 <div align="center" justify-content="space-between">
-  <img width= '30' src="public/satellite.svg" /> 
+  <img width= '50' src="public/satellite.svg" /> 
   <h1>NASA Astronomy Picture of the Day 
  </h1>
 </div>
