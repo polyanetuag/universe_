@@ -39,7 +39,9 @@ $ git clone https://github.com/polyanetuag/universe_.git
 $ cd universe
 
 # Install the dependencies
-$ yarn 
+$ yarn
+
+# Start the project
 ```
 
 ## 📝 License
