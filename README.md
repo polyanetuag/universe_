@@ -42,6 +42,7 @@ $ cd universe
 $ yarn
 
 # Start the project
+$ yarn dev
 ```
 
 ## 📝 License
