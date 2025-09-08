@@ -27,7 +27,7 @@ The project in question is a page that shows daily images of the universe, using
 
 - [React](https://pt-br.legacy.reactjs.org/)
 - [Tailwindcss](https://tailwindcss.com/)
-- Typescript
+- [Typescript](https://www.typescriptlang.org/)
 
 
 ## ⏱️ How to Run
