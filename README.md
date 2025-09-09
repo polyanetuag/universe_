@@ -14,7 +14,7 @@
 </h3>
 
 <div align="center">
-    <img width= '500' src="public/projeto.png" /> 
+    <img width= '550' src="public/projeto.png" /> 
 </div>
 
 ## 📚 About
