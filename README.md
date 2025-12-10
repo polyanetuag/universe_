@@ -25,7 +25,7 @@ The project in question is a page that shows daily images of the universe, using
 
 ## 🚀 Technologies used
 
-- [React](https://pt-br.legacy.reactjs.org/)
+- [ReactJs](https://pt-br.legacy.reactjs.org/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Typescript](https://www.typescriptlang.org/)
 
