@@ -1,6 +1,6 @@
 <div align="center" justify-content="space-between">
   <img width= '60' src="public/satellite.svg" /> 
-  <h1>NASA Astronomy - Picture of the Day 
+  <h1>NASA Astronomy - Picture of the day 
  </h1>
 </div>
 
