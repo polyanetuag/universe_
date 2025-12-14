@@ -19,7 +19,7 @@
 
 ## 📚 About
 
-The project in question is a page that shows daily images of the universe, using *NASA's API*.
+The project in question is a page that shows daily images of the universe, using the *NASA's API*.
 
 
 
