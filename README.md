@@ -48,7 +48,7 @@ $ yarn dev
 
 ## 📝 License
 
-This project is under the [MIT license](https://opensource.org/license/mit)
+This project is under the [MIT license](https://opensource.org/license/mit).
 
 ---
 Developed with 💜 by Polyane Tuag
